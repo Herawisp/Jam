@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://78ilnkrjd01d"]
 
 [ext_resource type="Script" uid="uid://61iy3cedddcb" path="res://scripts/player.gd" id="1_ct4mp"]
-[ext_resource type="Texture2D" uid="uid://rxvah1jyf4yq" path="res://asset/idle.png" id="1_fvtld"]
-[ext_resource type="Texture2D" uid="uid://dxyv3bew5gk2l" path="res://asset/lantern-throw.png" id="2_ct4mp"]
-[ext_resource type="Texture2D" uid="uid://tie1lqmj6nhb" path="res://asset/walk.png" id="3_s4jxa"]
+[ext_resource type="Texture2D" uid="uid://rxvah1jyf4yq" path="res://asset/player/idle.png" id="1_fvtld"]
+[ext_resource type="Texture2D" uid="uid://dxyv3bew5gk2l" path="res://asset/player/lantern-throw.png" id="2_ct4mp"]
+[ext_resource type="Texture2D" uid="uid://b7eldwhm5n5cv" path="res://asset/player/walk_lantern.png" id="3_oh5ij"]
+[ext_resource type="Texture2D" uid="uid://tie1lqmj6nhb" path="res://asset/player/walk.png" id="3_s4jxa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oh5ij"]
 atlas = ExtResource("1_fvtld")
@@ -20,6 +21,26 @@ region = Rect2(64, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_2fvbb"]
 atlas = ExtResource("1_fvtld")
 region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kk4ol"]
+atlas = ExtResource("3_oh5ij")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4reak"]
+atlas = ExtResource("3_oh5ij")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wt23p"]
+atlas = ExtResource("3_oh5ij")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8m7u"]
+atlas = ExtResource("3_oh5ij")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qucqc"]
+atlas = ExtResource("3_oh5ij")
+region = Rect2(128, 0, 32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ml7e8"]
 atlas = ExtResource("2_ct4mp")
@@ -90,6 +111,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_kk4ol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4reak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wt23p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8m7u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qucqc")
+}],
+"loop": true,
+"name": &"lantern",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_ml7e8")
 }, {
 "duration": 1.0,
@@ -110,7 +151,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bup7g")
 }],
-"loop": true,
+"loop": false,
 "name": &"lantern-throw",
 "speed": 5.0
 }, {
@@ -136,17 +177,18 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4reak"]
+radius = 9.0
 
 [node name="Player" type="Area2D" unique_id=1807908299]
 script = ExtResource("1_ct4mp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1901505232]
-position = Vector2(201.99998, 160.99998)
+position = Vector2(603, 358)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_kk4ol")
-animation = &"walk"
+animation = &"lantern-throw"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=645866156]
-position = Vector2(201, 166)
+position = Vector2(602, 363)
 scale = Vector2(2, 2)
 shape = SubResource("CapsuleShape2D_4reak")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxyv3bew5gk2l"
-path="res://.godot/imported/lantern-throw.png-850690fb3c4e75ff9baf991ae2156ac8.ctex"
+uid="uid://c2bt8xjekq721"
+path="res://.godot/imported/junemy-idle.png-b13ec4a1af5554fc4f7bda14ce6f2a25.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/lantern-throw.png"
-dest_files=["res://.godot/imported/lantern-throw.png-850690fb3c4e75ff9baf991ae2156ac8.ctex"]
+source_file="res://asset/jubah/junemy-idle.png"
+dest_files=["res://.godot/imported/junemy-idle.png-b13ec4a1af5554fc4f7bda14ce6f2a25.ctex"]
 
 [params]
 

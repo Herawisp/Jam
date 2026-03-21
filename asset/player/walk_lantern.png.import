@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rxvah1jyf4yq"
-path="res://.godot/imported/idle.png-ee14697fbb291c0f4416afa14b444934.ctex"
+uid="uid://b7eldwhm5n5cv"
+path="res://.godot/imported/walk_lantern.png-09cc36cb670906097887c352dd837f14.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/idle.png"
-dest_files=["res://.godot/imported/idle.png-ee14697fbb291c0f4416afa14b444934.ctex"]
+source_file="res://asset/player/walk_lantern.png"
+dest_files=["res://.godot/imported/walk_lantern.png-09cc36cb670906097887c352dd837f14.ctex"]
 
 [params]
 
