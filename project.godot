@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Under a Transyvania"
-run/main_scene="uid://78ilnkrjd01d"
+run/main_scene="uid://dy80gckqki4sq"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
