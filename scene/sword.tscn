@@ -76,8 +76,6 @@ size = Vector2(94, 58)
 
 [node name="Sword" type="Node2D" unique_id=1015066438]
 script = ExtResource("1_bk6pr")
-horizontal_radius = null
-vertical_radius = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1878815075]
 unique_name_in_owner = true
@@ -89,7 +87,8 @@ speed_scale = 2.0
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1018973688]
 visibility_layer = 4
-collision_layer = 4
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=15132566]
 position = Vector2(47, -2)

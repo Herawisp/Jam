@@ -107,4 +107,8 @@ func flash_sprite():
 
 
 func die():
-	pass
+	get_tree().quit()
+
+
+func _on_door_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

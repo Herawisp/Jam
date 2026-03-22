@@ -51,9 +51,7 @@ func _physics_process(_delta):
 
 func attack():
 	can_attack = false
-	print("Wizard is preparing to shoot...") # This should appear in output
-	attack_timer.start() 
-	# Note: The actual spawning of the bullet happens in the _on_attack_timer_timeout function
+	attack_timer.start()
 
 
 func take_damage(amount: int):
@@ -80,7 +78,6 @@ func die():
 
 
 func _on_attack_timer_timeout() -> void:
-	print("TEST")
 	can_attack = true
 	var bullet = projectile.instantiate()
 	bullet.target_group = 'Player'

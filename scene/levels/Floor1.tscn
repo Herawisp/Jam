@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dlfl3thfpx2q3" path="res://assets/images/health_bar.png" id="6_bkdy7"]
 [ext_resource type="Texture2D" uid="uid://d1caloglwb2nn" path="res://assets/images/health_bar_under.png" id="6_nuhwu"]
 [ext_resource type="Script" uid="uid://17ivxdx2r76d" path="res://scripts/user_interface/texture_progress_bar.gd" id="8_j6n5a"]
+[ext_resource type="Script" uid="uid://bq212e4h46515" path="res://scripts/door.gd" id="9_j6n5a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_35kwy"]
 texture = ExtResource("1_4xfwq")
@@ -270,6 +271,8 @@ texture = ExtResource("1_4xfwq")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_35kwy")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8sgdj"]
+
 [node name="Floor1" type="Node2D" unique_id=1257200445]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=32026240]
@@ -297,7 +300,6 @@ position = Vector2(2283, 1667)
 position_smoothing_enabled = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1010227303]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="Lantern" parent="." unique_id=1192687684 instance=ExtResource("4_dq2o7")]
@@ -306,6 +308,7 @@ position = Vector2(2283, 1667)
 scale_decrease_rate = 0.001
 
 [node name="Enemies" type="Node" parent="." unique_id=842919209]
+unique_name_in_owner = true
 
 [node name="Wizard" parent="Enemies" unique_id=2109245549 instance=ExtResource("5_dq2o7")]
 position = Vector2(474, 1801.0001)
@@ -402,3 +405,20 @@ value = 75.0
 texture_under = ExtResource("6_nuhwu")
 texture_progress = ExtResource("6_bkdy7")
 script = ExtResource("8_j6n5a")
+
+[node name="PanelContainer2" type="PanelContainer" parent="UI" unique_id=233769517]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="UI/PanelContainer2" unique_id=1581522705]
+layout_mode = 2
+
+[node name="Door" type="Area2D" parent="." unique_id=105926945]
+position = Vector2(2402, 545)
+scale = Vector2(3.5465803, 5.4065485)
+script = ExtResource("9_j6n5a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=1519681001]
+shape = SubResource("RectangleShape2D_8sgdj")
+
+[connection signal="body_entered" from="Door" to="Door" method="_on_body_entered"]

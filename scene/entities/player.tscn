@@ -32,12 +32,15 @@ shape = SubResource("CapsuleShape2D_4reak")
 
 [node name="Gun" parent="." unique_id=127808153 instance=ExtResource("3_fvtld")]
 unique_name_in_owner = true
-visible = false
 
 [node name="Sword" parent="." unique_id=1015066438 instance=ExtResource("4_ct4mp")]
 unique_name_in_owner = true
+visible = false
+horizontal_radius = 35.0
+vertical_radius = 55.0
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1975948324]
+unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1486380968]
 position = Vector2(0, 18)
