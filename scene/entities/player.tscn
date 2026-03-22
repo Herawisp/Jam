@@ -6,12 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://ul7l1l17op48" path="res://scene/sword.tscn" id="4_ct4mp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4reak"]
-height = 33.0
+radius = 11.0
+height = 22.0
 
-[node name="Player" type="CharacterBody2D" unique_id=196961937]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ct4mp"]
+radius = 21.0
+height = 76.0
+
+[node name="Player" type="CharacterBody2D" unique_id=196961937 groups=["Player"]]
 motion_mode = 1
 script = ExtResource("1_hjaqi")
-movement_speed = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1901505232]
 unique_name_in_owner = true
@@ -22,7 +26,7 @@ autoplay = "idle_lantern"
 speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=645866156]
-position = Vector2(-1, 29)
+position = Vector2(0, 42)
 scale = Vector2(2, 2)
 shape = SubResource("CapsuleShape2D_4reak")
 
@@ -32,3 +36,11 @@ visible = false
 
 [node name="Sword" parent="." unique_id=1015066438 instance=ExtResource("4_ct4mp")]
 unique_name_in_owner = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1975948324]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1486380968]
+position = Vector2(0, 18)
+shape = SubResource("CapsuleShape2D_ct4mp")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

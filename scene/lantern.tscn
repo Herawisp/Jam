@@ -7,15 +7,17 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ofs6t"]
 size = Vector2(18, 27)
 
-[node name="Area2D" type="Area2D" unique_id=980675823]
+[node name="Lantern" type="Area2D" unique_id=1192687684]
 script = ExtResource("1_g21ln")
+scale_decrease_rate = 0.05
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=262406132]
-position = Vector2(-36, 24)
+unique_name_in_owner = true
 texture = ExtResource("1_3meb3")
-texture_scale = 0.5
+texture_scale = 10.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1903700793]
+unique_name_in_owner = true
 visible = false
 scale = Vector2(3, 3)
 texture = ExtResource("3_jbp7e")
@@ -23,3 +25,5 @@ texture = ExtResource("3_jbp7e")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=62904483]
 position = Vector2(0, 7.5)
 shape = SubResource("RectangleShape2D_ofs6t")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

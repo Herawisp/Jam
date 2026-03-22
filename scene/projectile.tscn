@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_u6xv6"]
 radius = 1.0
 
-[node name="Projectile" type="Area2D" unique_id=1250399599]
+[node name="Projectile" type="Area2D" unique_id=1250399599 groups=["Projectile"]]
 scale = Vector2(3, 3)
 script = ExtResource("1_u6xv6")
 
@@ -16,3 +16,5 @@ shape = SubResource("CircleShape2D_u6xv6")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1314361157]
 texture = ExtResource("1_v1jrq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

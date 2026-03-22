@@ -71,8 +71,13 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2yo3"]
+size = Vector2(94, 58)
+
 [node name="Sword" type="Node2D" unique_id=1015066438]
 script = ExtResource("1_bk6pr")
+horizontal_radius = null
+vertical_radius = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1878815075]
 unique_name_in_owner = true
@@ -82,4 +87,19 @@ sprite_frames = SubResource("SpriteFrames_ml7e8")
 animation = &"strike"
 speed_scale = 2.0
 
+[node name="Area2D" type="Area2D" parent="." unique_id=1018973688]
+visibility_layer = 4
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=15132566]
+position = Vector2(47, -2)
+shape = SubResource("RectangleShape2D_v2yo3")
+
+[node name="Cooldown" type="Timer" parent="." unique_id=1205072774]
+unique_name_in_owner = true
+wait_time = 0.5
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]

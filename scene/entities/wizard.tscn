@@ -1,0 +1,169 @@
+[gd_scene format=3 uid="uid://c7i8ob0inbwu5"]
+
+[ext_resource type="Script" uid="uid://cwoukm471kjbk" path="res://scene/wizard.gd" id="1_g3t0p"]
+[ext_resource type="Texture2D" uid="uid://bke3ff0yn0wyi" path="res://assets/sprite_sheets/wizard/death.png" id="2_at6aa"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_krbxm"]
+load_path = "res://.godot/imported/winemy-attack.png-a67e797a982b7f49f41e2d3d9dc65a8b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cl0ul"]
+atlas = SubResource("CompressedTexture2D_krbxm")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6mn2i"]
+atlas = SubResource("CompressedTexture2D_krbxm")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hoowr"]
+atlas = SubResource("CompressedTexture2D_krbxm")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xowb0"]
+atlas = SubResource("CompressedTexture2D_krbxm")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qo6hw"]
+atlas = ExtResource("2_at6aa")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvxc8"]
+atlas = ExtResource("2_at6aa")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dp0ym"]
+atlas = ExtResource("2_at6aa")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i28dq"]
+atlas = ExtResource("2_at6aa")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xb07"]
+atlas = ExtResource("2_at6aa")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2waot"]
+atlas = ExtResource("2_at6aa")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60mcj"]
+atlas = ExtResource("2_at6aa")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g3t0p"]
+load_path = "res://.godot/imported/winemy-idle.png-5fd9800bcd4aa91da189f6bf7dbd0cd1.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ud2pg"]
+atlas = SubResource("CompressedTexture2D_g3t0p")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uagqd"]
+atlas = SubResource("CompressedTexture2D_g3t0p")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_x4uyt"]
+load_path = "res://.godot/imported/winemy-walk.png-7f2179f8c0185271bf8f12fe3b1e4fbc.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qww3p"]
+atlas = SubResource("CompressedTexture2D_x4uyt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpytf"]
+atlas = SubResource("CompressedTexture2D_x4uyt")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aig24"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cl0ul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6mn2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hoowr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xowb0")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qo6hw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvxc8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dp0ym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i28dq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xb07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2waot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60mcj")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ud2pg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uagqd")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qww3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kpytf")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s68vt"]
+radius = 8.0
+height = 26.0
+
+[node name="Wizard" type="CharacterBody2D" unique_id=2109245549 groups=["Enemy"]]
+scale = Vector2(3, 3)
+script = ExtResource("1_g3t0p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=317393189]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_aig24")
+animation = &"death"
+frame_progress = 0.70446765
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1787481212]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_s68vt")
+
+[node name="AttackTimer" type="Timer" parent="." unique_id=2029725514]
+unique_name_in_owner = true
+
+[node name="ShootPoint" type="Node2D" parent="." unique_id=324103498]
+unique_name_in_owner = true
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

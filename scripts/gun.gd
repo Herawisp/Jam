@@ -17,8 +17,14 @@ func _process(_delta):
 	update_gun_transform()
 
 
+func trigger():
+	active = not active
+	visible = not visible
+
+
 func shoot():
 	var bullet = projectile.instantiate()
+	bullet.target_group = 'Enemy'
 	bullet.global_position = shoot_point.global_position
 	bullet.rotation = rotation
 	get_tree().root.add_child(bullet)
