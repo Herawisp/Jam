@@ -11,6 +11,7 @@ height = 33.0
 [node name="Player" type="CharacterBody2D" unique_id=196961937]
 motion_mode = 1
 script = ExtResource("1_hjaqi")
+movement_speed = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1901505232]
 unique_name_in_owner = true
@@ -26,6 +27,8 @@ scale = Vector2(2, 2)
 shape = SubResource("CapsuleShape2D_4reak")
 
 [node name="Gun" parent="." unique_id=127808153 instance=ExtResource("3_fvtld")]
+unique_name_in_owner = true
+visible = false
 
 [node name="Sword" parent="." unique_id=1015066438 instance=ExtResource("4_ct4mp")]
-visible = false
+unique_name_in_owner = true

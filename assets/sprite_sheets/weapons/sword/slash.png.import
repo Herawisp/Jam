@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crioroxhmfbyp"
-path="res://.godot/imported/sword_strike.png-563201ca84e08e530dc43720999f643f.ctex"
+uid="uid://dg1kbx3vb07bb"
+path="res://.godot/imported/slash.png-39a67ee6e60f57cce1cc70cc3755a414.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite_sheets/weapons/sword_strike.png"
-dest_files=["res://.godot/imported/sword_strike.png-563201ca84e08e530dc43720999f643f.ctex"]
+source_file="res://assets/sprite_sheets/weapons/sword/slash.png"
+dest_files=["res://.godot/imported/slash.png-39a67ee6e60f57cce1cc70cc3755a414.ctex"]
 
 [params]
 

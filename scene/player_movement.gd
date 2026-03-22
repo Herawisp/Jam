@@ -4,6 +4,9 @@ const player_sprite_frames = preload("res://resources/sprite_frames/player_sprit
 const shadow_sprite_frames = preload("res://resources/sprite_frames/shadow_sprite_frames.tres")
 
 @onready var sprite : AnimatedSprite2D = %AnimatedSprite2D
+@onready var gun = %Gun
+@onready var sword = %Sword
+
 @export var movement_speed : float = 500
 var character_direction : Vector2
 
@@ -32,6 +35,10 @@ func _physics_process(_delta):
 		if sprite.animation != 'idle_lantern': sprite.animation = 'idle_lantern'
 	
 	move_and_slide()
+
+
+func change_weapon():
+	if gun.active
 
 
 func change_mode(mode : Enums.Gamemode):

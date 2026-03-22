@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://r16uo24j5s2" path="res://assets/tilemap/Tiles-SandstoneDungeons.png" id="1_x5n27"]
 [ext_resource type="Script" uid="uid://bcdhtkdodgqe2" path="res://scripts/autoloads/mode_manager.gd" id="2_fb1ex"]
 [ext_resource type="PackedScene" uid="uid://d2s6j2dgxq23p" path="res://scene/projectile.tscn" id="3_fb1ex"]
-[ext_resource type="Texture2D" uid="uid://cxem33cbai7n2" path="res://assets/images/vision_texture.png" id="5_jsie2"]
+[ext_resource type="PackedScene" uid="uid://d3w0dy3r6irdv" path="res://scene/lantern.tscn" id="5_x5n27"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qvu5t"]
 texture = ExtResource("1_x5n27")
@@ -200,8 +200,11 @@ tile_set = SubResource("TileSet_pi0uh")
 unique_name_in_owner = true
 position = Vector2(414, 301)
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player" unique_id=1456189533]
+[node name="CameraFollow" type="RemoteTransform2D" parent="Player" unique_id=1456189533]
 remote_path = NodePath("../../Camera2D")
+
+[node name="LanternFollow" type="RemoteTransform2D" parent="Player" unique_id=1214218647]
+remote_path = NodePath("../../Lantern")
 
 [node name="ModeManager" type="Node2D" parent="." unique_id=65200461]
 script = ExtResource("2_fb1ex")
@@ -215,10 +218,5 @@ position_smoothing_enabled = true
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=20869914]
 color = Color(0, 0, 0, 1)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1062784925]
-position = Vector2(448, 301)
-
-[node name="PointLight2D" type="PointLight2D" parent="Area2D" unique_id=1544423101]
-position = Vector2(-36, 24)
-texture = ExtResource("5_jsie2")
-texture_scale = 0.5
+[node name="Lantern" parent="." unique_id=980675823 instance=ExtResource("5_x5n27")]
+position = Vector2(414, 301)

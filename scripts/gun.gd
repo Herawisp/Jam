@@ -6,10 +6,10 @@ const projectile = preload("res://scene/projectile.tscn")
 @export var horizontal_radius: float = 55.0 
 @export var vertical_radius: float = 65.0
 var offset_vector = Vector2(0, 25)
-
+var active = false
 
 func _input(event):
-	if event.is_action_pressed("shoot"):
+	if event.is_action_pressed("shoot") and active:
 		shoot()
 
 

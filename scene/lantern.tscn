@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://d3w0dy3r6irdv"]
+
+[ext_resource type="Texture2D" uid="uid://cxem33cbai7n2" path="res://assets/images/vision_texture.png" id="1_3meb3"]
+[ext_resource type="Script" uid="uid://b88vb0baxai6u" path="res://scene/lantern.gd" id="1_g21ln"]
+[ext_resource type="Texture2D" uid="uid://cgn4vam53muaq" path="res://assets/sprite_sheets/weapons/lantern.png" id="3_jbp7e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ofs6t"]
+size = Vector2(18, 27)
+
+[node name="Area2D" type="Area2D" unique_id=980675823]
+script = ExtResource("1_g21ln")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=262406132]
+position = Vector2(-36, 24)
+texture = ExtResource("1_3meb3")
+texture_scale = 0.5
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1903700793]
+visible = false
+scale = Vector2(3, 3)
+texture = ExtResource("3_jbp7e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=62904483]
+position = Vector2(0, 7.5)
+shape = SubResource("RectangleShape2D_ofs6t")
