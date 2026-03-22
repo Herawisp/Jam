@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://d2s6j2dgxq23p"]
+
+[ext_resource type="Script" uid="uid://cvlc6ybqbpeo0" path="res://scripts/projectile.gd" id="1_u6xv6"]
+[ext_resource type="Texture2D" uid="uid://bx1iun5sdovnl" path="res://assets/sprite_sheets/weapons/bullet.png" id="1_v1jrq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u6xv6"]
+radius = 1.0
+
+[node name="Projectile" type="Area2D" unique_id=1250399599]
+scale = Vector2(3, 3)
+script = ExtResource("1_u6xv6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1695096545]
+scale = Vector2(2.7621117, 2.6975298)
+shape = SubResource("CircleShape2D_u6xv6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1314361157]
+texture = ExtResource("1_v1jrq")

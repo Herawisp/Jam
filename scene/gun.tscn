@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://k5aie65xfukr"]
+
+[ext_resource type="Script" uid="uid://cjqwjjvgtf8sh" path="res://scripts/gun.gd" id="1_h5mb1"]
+[ext_resource type="Texture2D" uid="uid://dawoltt6avgo0" path="res://assets/sprite_sheets/weapons/gun.png" id="2_2ovx3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g2vtq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ovx3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Gun" type="Node2D" unique_id=127808153]
+script = ExtResource("1_h5mb1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=619219174]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_g2vtq")
+animation = &"idle"
+
+[node name="ShootPoint" type="Node2D" parent="." unique_id=1090507176]
+unique_name_in_owner = true
+position = Vector2(21.225, -4.265)

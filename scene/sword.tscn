@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://ul7l1l17op48"]
+
+[ext_resource type="Script" uid="uid://cd63nodgsl16c" path="res://scripts/sword.gd" id="1_bk6pr"]
+[ext_resource type="Texture2D" uid="uid://dj1nn88slp4dn" path="res://assets/sprite_sheets/weapons/sword.png" id="2_v2yo3"]
+[ext_resource type="Texture2D" uid="uid://crioroxhmfbyp" path="res://assets/sprite_sheets/weapons/sword_strike.png" id="3_v2yo3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bk6pr"]
+atlas = ExtResource("2_v2yo3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hp4bs"]
+atlas = ExtResource("2_v2yo3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2vtq"]
+atlas = ExtResource("2_v2yo3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fvbb"]
+atlas = ExtResource("2_v2yo3")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlqbj"]
+atlas = ExtResource("3_v2yo3")
+region = Rect2(0, 0, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_so1pe"]
+atlas = ExtResource("3_v2yo3")
+region = Rect2(48, 0, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5tdf"]
+atlas = ExtResource("3_v2yo3")
+region = Rect2(96, 0, 48, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ml7e8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk6pr")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hp4bs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2vtq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fvbb")
+}],
+"loop": false,
+"name": &"slash",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rlqbj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_so1pe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5tdf")
+}],
+"loop": false,
+"name": &"strike",
+"speed": 5.0
+}]
+
+[node name="Sword" type="Node2D" unique_id=1015066438]
+script = ExtResource("1_bk6pr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1878815075]
+unique_name_in_owner = true
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_ml7e8")
+animation = &"idle"
+speed_scale = 2.0
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
